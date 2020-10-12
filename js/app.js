@@ -38,4 +38,48 @@ function sendRequest(URL, method = 'GET', data, responseType = 'text') {
 
 
 
+const sendButton = document.querySelector('#signup-send');
+sendButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    const name = document.querySelector('#signup-name').value;
+    const password = document.querySelector('#signup-pass').value;
+    const email = document.querySelector('#signup-email').value;
+    const birthday = document.querySelector('#signup-birthday').value;
+    const radioSex = document.querySelectorAll('.radio-sex');
+    let valueChekedRadio;
+    radioSex.forEach(radio => {
+        if (radio.checked) {
+            valueChekedRadio = radio.value;
+            return;
+        }
+    });
+    
+    const formData = {
+        'name': name,
+        'pass': password,
+        'email': email,
+        'birthday': birthday,
+        'sex': valueChekedRadio
+    };
+    
+    login(formData);
+    async function login(userData) {
+        let response = await sendRequest('core/signup.php', 'POST', parseObjToGet(userData));
+        if (response == 2) {
+            alert('Заполните все поля!');
+        } else if (response == 1) {
+            alert('Успех! Можно войти.');
+        } else {
+            alert('Ошибка! Повторите регистрацию позже.');
+        }
+    }
 
+});
+
+function parseObjToGet(obj) {
+    let getStr = '';
+    for (const key in obj) {
+        getStr += `${key}=${obj[key]}&`;
+    }
+    return getStr;
+}
