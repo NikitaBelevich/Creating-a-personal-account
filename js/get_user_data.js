@@ -1,5 +1,14 @@
 'use strict';
 
+document.addEventListener('DOMContentLoaded', function () {
+    const elems = document.querySelectorAll('.datepicker');
+    const instances = M.Datepicker.init(elems, {
+        format: 'dd-mm-yyyy',
+        yearRange: [1950, 2020],
+    });
+});
+
+
 let userEmail = getCookie('email');
 const changeUserDataForm = document.querySelector('#change-user-data');
 const radioSex = document.querySelectorAll('.radio-sex');
@@ -22,6 +31,8 @@ async function getUserData() {
     userName.value = userData.name;
     userPassword.value = userData.password;
     userBirthday.value = userData.birthday;
+    M.updateTextFields(); // Обновление полей
+
     // Отмечаем пол
     radioSex.forEach(radio => {
         if (radio.value == userData.sex) {
@@ -54,8 +65,8 @@ async function changeUserData() {
     };
     let response = await sendRequest('update_user_data.php', 'POST', parseObjToGet(updateData));
     if (response == 1) {
-        alert('Данные обновлены');
+        M.toast({html: 'Данные обновлены успешно.', displayLength: 3000});
     } else {
-        alert('Ошибка обновления');
+        M.toast({html: 'Ошибка обновления.'});
     }
 }
