@@ -94,7 +94,7 @@
     </div>
 
     
-
+    <script src="/js/calendar-settings.js" defer></script>
     <script src="/js/ajax.js" defer></script>
     <script src="/js/cookies-tools.js" defer></script>
     <script src="/js/get_user_data.js" defer></script>

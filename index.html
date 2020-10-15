@@ -5,33 +5,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <title>Home page</title>
     
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" defer></script>
+    <link rel="stylesheet" href="/css/main-style.css">
 </head>
 
 <body>
-    <h1>Signin</h1>
-    <form method="POST">
-        <div>Name: <input type="text" name="name" id="signup-name"></div>
-        <div>Password: <input type="text" name="pass" id="signup-pass"></div>
-        <div>Email: <input type="text" name="email" id="signup-email"></div>
-        <div>Birthday: <input type="text" name="birthday" id="signup-birthday"></div>
-        <div>Sex:
-            <div> <input class="radio-sex" type="radio" value="male" name="sex" checked>male</div>
-            <div><input class="radio-sex" type="radio" value="female" name="sex">female</div>
-            <div><input class="radio-sex" type="radio" value="other" name="sex">other</div>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <h1 class="title-site-name">Signin</h1>
+                </div>
+                
+            </div>
         </div>
-        <input type="submit" value="send" id="signup-send">
+    </header>
+
+    
+    <form method="POST">
+        <div class="container">
+            <div class="row">
+                <div class="input-field col s6 center">
+                    <input type="text" id="signup-name" class="validate" name="name">
+                    <label for="signup-name">Name</label>
+                </div>
+                <div class="input-field col s6 center">
+                    <input type="password" id="signup-pass" class="validate" name="pass">
+                    <label for="signup-pass">Password</label>
+                </div>
+                <div class="input-field col s6 center">
+                    <input type="email" id="signup-email" class="validate" name="email">
+                    <label for="signup-email">Email</label>
+                </div>
+                <div class="input-field col s6 center">
+                    <input class="datepicker validate" type="text" name="birthday" id="signup-birthday">
+                    <label for="signup-birthday">Birthday</label>
+                </div>
+                <div class="input-field col s6">
+                    <div>
+                        <label>Sex:</label>
+                        <div>
+                            <label>
+                                <input class="with-gap radio-sex" name="sex" type="radio" value="male" checked>
+                                <span>male</span>
+                            </label>
+                        </div>
+
+                        <div>
+                            <label>
+                                <input class="with-gap radio-sex" name="sex" type="radio" value="female">
+                                <span>female</span>
+                            </label>
+                        </div>
+
+                        <div>
+                            <label>
+                                <input class="with-gap radio-sex" name="sex" type="radio" value="other">
+                                <span>other</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 center">
+                    <button type="submit" class="waves-effect waves-light btn deep-purple accent-2"
+                        id="signup-send">Create</button>
+                </div>
+            </div>
+        </div>
+        
     </form>
     <hr>
-    <h2>Login</h2>
-    <form action="core/login.php" method="POST">
-        <div>Email: <input type="text" name="email" id="login-email" value="lena@mail.ru"></div>
-        <div>Password: <input type="text" name="pass" id="login-pass" value="123"></div>
-        <input type="submit" value="login" id="login-submit">
-    </form>
+
+
+
     
 
+    <form method="#">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <h2 class="title-site-name">login</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6 center">
+                    <input type="text" id="login-email" class="validate" name="email">
+                    <label for="login-email">Email</label>
+                </div>
+                <div class="input-field col s6 center">
+                    <input type="text" id="login-pass" class="validate" name="pass">
+                    <label for="login-pass">Password</label>
+                </div>
+                <div class="col s12 center">
+                    <button type="submit" class="waves-effect waves-light btn deep-purple accent-2"
+                        id="login-submit">Login</button>
+                </div>
+            </div>
+        </div>
+        
+        
+    </form>
+    
+<!-- value="lena@mail.ru"value="123" -->
+    <script src="/js/calendar-settings.js" defer></script>
     <script src="/js/cookies-tools.js" defer></script>
     <script src="/js/ajax.js" defer></script>
     <script src="/js/app.js" defer></script>
