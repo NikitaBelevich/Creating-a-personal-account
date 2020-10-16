@@ -23,7 +23,7 @@ function showModal() {
 
 //TODO Закрытие модального окна ---------------------------------------------------------------------
 const allModal = document.querySelectorAll('.modal-wrap');
-document.addEventListener('click', event => {
+document.addEventListener('mousedown', event => {
     const target = event.target;
     const closeButton = target.classList.contains('close-modal'); // Была нажата кнопка закрытия?
     const targetOverlay = target.classList.contains('modal-wrap'); // Был клик по оверлею?
