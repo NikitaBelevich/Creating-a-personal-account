@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" defer></script>
+    <link rel="stylesheet" href="/css/modal-style.css">
     <link rel="stylesheet" href="/css/main-style.css">
 </head>
 
@@ -25,102 +26,166 @@
                 <div class="col s12">
                     <h1 class="title-site-name">Signin</h1>
                 </div>
-                
+                <div class="col s12">
+                    <button class="modal-show waves-effect waves-light btn deep-purple accent-2" data-modal="#sign-in">Login</button>
+                    <button class="modal-show waves-effect waves-light btn deep-purple accent-2" data-modal="#sign-up">Reg</button>
+                </div>
             </div>
         </div>
     </header>
 
     
-    <form method="POST">
-        <div class="container">
-            <div class="row">
-                <div class="input-field col s6 center">
-                    <input type="text" id="signup-name" class="validate" name="name">
-                    <label for="signup-name">Name</label>
-                </div>
-                <div class="input-field col s6 center">
-                    <input type="password" id="signup-pass" class="validate" name="pass">
-                    <label for="signup-pass">Password</label>
-                </div>
-                <div class="input-field col s6 center">
-                    <input type="email" id="signup-email" class="validate" name="email">
-                    <label for="signup-email">Email</label>
-                </div>
-                <div class="input-field col s6 center">
-                    <input class="datepicker validate" type="text" name="birthday" id="signup-birthday">
-                    <label for="signup-birthday">Birthday</label>
-                </div>
-                <div class="input-field col s6">
+    
+    
+
+    <div class="modal-wrap hide-modal" id="sign-up">
+        <div class="modal-wrap__for-button"> <!-- Обёртка для выноса кнопки закрытия -->
+            <button class="close-modal" data-modal="#sign-up">+</button>
+            <!-- Окно -->
+            <div class="modal-window">
+                <div class="modal-window__slider-container">
                     <div>
-                        <label>Sex:</label>
-                        <div>
-                            <label>
-                                <input class="with-gap radio-sex" name="sex" type="radio" value="male" checked>
-                                <span>male</span>
-                            </label>
-                        </div>
+                        <form method="#">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="input-field col s6 center">
+                                        <input type="text" id="signup-name" class="validate" name="name">
+                                        <label for="signup-name">Name</label>
+                                    </div>
+                                    <div class="input-field col s6 center">
+                                        <input type="password" id="signup-pass" class="validate" name="pass">
+                                        <label for="signup-pass">Password</label>
+                                    </div>
+                                    <div class="input-field col s6 center">
+                                        <input type="email" id="signup-email" class="validate" name="email">
+                                        <label for="signup-email">Email</label>
+                                    </div>
+                                    <div class="input-field col s6 center">
+                                        <input class="datepicker validate" type="text" name="birthday"
+                                            id="signup-birthday">
+                                        <label for="signup-birthday">Birthday</label>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <div>
+                                            <label>Sex:</label>
+                                            <div>
+                                                <label>
+                                                    <input class="with-gap radio-sex" name="sex" type="radio"
+                                                        value="male" checked>
+                                                    <span>male</span>
+                                                </label>
+                                            </div>
 
-                        <div>
-                            <label>
-                                <input class="with-gap radio-sex" name="sex" type="radio" value="female">
-                                <span>female</span>
-                            </label>
-                        </div>
+                                            <div>
+                                                <label>
+                                                    <input class="with-gap radio-sex" name="sex" type="radio"
+                                                        value="female">
+                                                    <span>female</span>
+                                                </label>
+                                            </div>
 
-                        <div>
-                            <label>
-                                <input class="with-gap radio-sex" name="sex" type="radio" value="other">
-                                <span>other</span>
-                            </label>
-                        </div>
+                                            <div>
+                                                <label>
+                                                    <input class="with-gap radio-sex" name="sex" type="radio"
+                                                        value="other">
+                                                    <span>other</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s12 center">
+                                        <button type="submit" class="waves-effect waves-light btn deep-purple accent-2"
+                                            id="signup-send">Create</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
                     </div>
+
                 </div>
             </div>
-            <div class="row">
-                <div class="col s12 center">
-                    <button type="submit" class="waves-effect waves-light btn deep-purple accent-2"
-                        id="signup-send">Create</button>
-                </div>
-            </div>
+            <!-- Окно -->
         </div>
-        
-    </form>
-    <hr>
+    </div>
 
 
+    <div class="modal-wrap hide-modal" id="sign-in">
+        <div class="modal-wrap__for-button"> <!-- Обёртка для выноса кнопки закрытия -->
+            <button class="close-modal" data-modal="#sign-in">+</button>
+            <!-- Окно -->
+            <div class="modal-window">
+                <div class="modal-window__slider-container">
+                    <div>
+                        <form method="#">
+                            <div class="container">
+                                <!-- <div class="row">
+                                    <div class="col s12">
+                                        <h2 class="title-site-name">login</h2>
+                                    </div>
+                                </div> -->
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input type="text" id="login-email" class="validate" name="email">
+                                        <label for="login-email">Email</label>
+                                    </div>
+                                    <div class="input-field col s12">
+                                        <input type="text" id="login-pass" class="validate" name="pass">
+                                        <label for="login-pass">Password</label>
+                                    </div>
+                                    <div class="col s12 center">
+                                        <button type="submit" class="waves-effect waves-light btn deep-purple accent-2"
+                                            id="login-submit">Login</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </form>
+                    </div>
+
+                    <!-- <div class="modal-window__form-rules">
+                        <span class="form-modal__link-rules" id="rules-back">...back</span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, praesentium. Nemo quod
+                            quis quo labore veniam sit quisquam asperiores totam? Eum sunt architecto fugiat ducimus
+                            aliquid animi officiis, tempora aut.
+                        </p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, praesentium. Nemo quod
+                            quis
+                            quo labore veniam sit quisquam asperiores totam? Eum sunt architecto fugiat ducimus aliquid
+                            animi officiis, tempora aut.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, praesentium. Nemo quod
+                            quis
+                            quo labore veniam sit quisquam asperiores totam? Eum sunt architecto fugiat ducimus aliquid
+                            animi officiis, tempora aut.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, praesentium. Nemo quod
+                            quis
+                            quo labore veniam sit quisquam asperiores totam? Eum sunt architecto fugiat ducimus aliquid
+                            animi officiis, tempora aut.
+                        </p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, praesentium. Nemo quod
+                            quis quo labore veniam sit quisquam asperiores totam? Eum sunt architecto fugiat ducimus
+                            aliquid animi officiis, tempora aut.
+                        </p>
+                    </div> -->
+                </div>
+            </div>
+            <!-- Окно -->
+        </div>
+    </div>
 
     
 
-    <form method="#">
-        <div class="container">
-            <div class="row">
-                <div class="col s12">
-                    <h2 class="title-site-name">login</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s6 center">
-                    <input type="text" id="login-email" class="validate" name="email">
-                    <label for="login-email">Email</label>
-                </div>
-                <div class="input-field col s6 center">
-                    <input type="text" id="login-pass" class="validate" name="pass">
-                    <label for="login-pass">Password</label>
-                </div>
-                <div class="col s12 center">
-                    <button type="submit" class="waves-effect waves-light btn deep-purple accent-2"
-                        id="login-submit">Login</button>
-                </div>
-            </div>
-        </div>
-        
-        
-    </form>
+    
+    
+    
     
 <!-- value="lena@mail.ru"value="123" -->
     <script src="/js/calendar-settings.js" defer></script>
     <script src="/js/cookies-tools.js" defer></script>
     <script src="/js/ajax.js" defer></script>
+    <script src="/js/modal-script.js" defer></script>
     <script src="/js/app.js" defer></script>
 </body>
 
