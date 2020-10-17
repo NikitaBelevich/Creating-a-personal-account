@@ -5,5 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const instances = M.Datepicker.init(elems, {
         format: 'dd-mm-yyyy',
         yearRange: [1950, 2020],
+        container: document.body,
     });
 });
