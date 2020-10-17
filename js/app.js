@@ -1,8 +1,14 @@
 'use strict';
 
+const sendButton = document.querySelector('#signup-send');
+
+// Соглашение с правилами и активация кнопки регистрации
+const checkboxRules = document.querySelector('#check-agree-rules');
+checkboxRules.addEventListener('change', (e) => {
+    sendButton.classList.toggle('disabled');
+});
 
 // Регистрация пользователя
-const sendButton = document.querySelector('#signup-send');
 sendButton.addEventListener('click', (e) => {
     e.preventDefault();
     const name = document.querySelector('#signup-name').value;

@@ -10,6 +10,10 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
 input:not([type]):focus:not([readonly])+label, input[type=text]:not(.browser-default):focus:not([readonly])+label, input[type=password]:not(.browser-default):focus:not([readonly])+label, input[type=email]:not(.browser-default):focus:not([readonly])+label, input[type=url]:not(.browser-default):focus:not([readonly])+label, input[type=time]:not(.browser-default):focus:not([readonly])+label, input[type=date]:not(.browser-default):focus:not([readonly])+label, input[type=datetime]:not(.browser-default):focus:not([readonly])+label, input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label, input[type=tel]:not(.browser-default):focus:not([readonly])+label, input[type=number]:not(.browser-default):focus:not([readonly])+label, input[type=search]:not(.browser-default):focus:not([readonly])+label, textarea.materialize-textarea:focus:not([readonly])+label {
     color: var(--main-color);
 }
+[type="checkbox"].filled-in:checked+span:not(.lever):after{
+    border: 2px solid var(--main-color);
+    background-color: var(--main-color);
+}
 
 button:focus {
     outline: none;
@@ -22,13 +26,6 @@ button:focus {
 .logout-btn > i {
     transform: rotate(180deg);
 }
-/* .btn-purple-color {
-    background-color: transparent;
-    background-color: #7c4dff;
-}
-.btn-purple-color:hover{
-    background-color: #9873ff;
-} */
 
 .user-data-form > [type="radio"]:checked+span:after, [type="radio"].with-gap:checked+span:before, [type="radio"].with-gap:checked+span:after {
     border: 2px solid var(--main-color);
@@ -40,3 +37,6 @@ button:focus {
     font-size: 24px;
 }
 
+.signup-close-button {
+    top: -200px;
+}
