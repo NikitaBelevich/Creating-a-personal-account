@@ -36,11 +36,11 @@ sendButton.addEventListener('click', (e) => {
     async function login(userData) {
         let response = await sendRequest('core/signup.php', 'POST', parseObjToGet(userData));
         if (response == 2) {
-            alert('Заполните все поля!');
+            M.toast({html: 'Заполните все поля!'});
         } else if (response == 1) {
-            alert('Успех! Можно войти.');
+            M.toast({html: 'Успех! Можно войти.'});
         } else {
-            alert('Ошибка! Повторите регистрацию позже.');
+            M.toast({html: 'Ошибка! Повторите регистрацию позже.'});
         }
     }
 
@@ -63,9 +63,9 @@ signupButton.addEventListener('click', (e) => {
     async function signup(userData) {
         let response = await sendRequest('core/login.php', 'POST', parseObjToGet(userData));
         if (response == 2) {
-            alert('Заполните все поля!');
+            M.toast({html: 'Заполните все поля!'});
         } else if (response == 0) {
-            alert('Пользователь не найден.');
+            M.toast({html: 'Пользователь не найден.'});
         } else {
             let response_json = JSON.parse(response);
             console.log(response_json);
