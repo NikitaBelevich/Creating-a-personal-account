@@ -39,6 +39,7 @@ sendButton.addEventListener('click', (e) => {
             M.toast({html: 'Заполните все поля!'});
         } else if (response == 1) {
             M.toast({html: 'Успех! Можно войти.'});
+            closeModal();
         } else {
             M.toast({html: 'Ошибка! Повторите регистрацию позже.'});
         }
