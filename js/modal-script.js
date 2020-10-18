@@ -30,7 +30,6 @@ document.addEventListener('mousedown', event => {
     // Если было нажато одно из двух, тогда завершаем работу с модалкой
     if (closeButton || targetOverlay) {
         closeModal();
-        document.removeEventListener('keydown', closeModalOnKey);
     }
 });
 
@@ -42,6 +41,7 @@ function closeModal() {
     });
     // Возвращаем прокрутку
     document.body.style.overflowY = '';
+    document.removeEventListener('keydown', closeModalOnKey);
 }
 // TODO Закрытие окна на Escape
 function closeModalOnKey(event) {
@@ -51,5 +51,4 @@ function closeModalOnKey(event) {
         // Если нажали Esc, удаляем этот обработчик с документа
         document.removeEventListener('keydown', closeModalOnKey);
     }
-    // console.warn(event.code);
 }
